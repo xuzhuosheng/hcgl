@@ -1,0 +1,19 @@
+#配置端口
+server:
+  port: 10000
+#配置服务器名
+spring:
+  application:
+    name: hcgl-zuul
+#配置eureka
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://admin:123@localhost:5000/eureka/
+  instance:
+    prefer-ip-address: true
+#ribbon:
+#  eureka:
+#    enabled: false

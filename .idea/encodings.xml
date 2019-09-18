@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hcgl-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hcgl-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hcgl-provider-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hcgl-provider-api/hcgl-provider-xtgn-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hcgl-provider/hcgl-provider-cgjl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hcgl-provider/hcgl-provider-hcwh" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hcgl-provider/hcgl-provider-kcgl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hcgl-provider/hcgl-provider-sqjl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hcgl-provider/hcgl-provider-xtgn" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hcgl-zuul" charset="UTF-8" />
+  </component>
+</project>

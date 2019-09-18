@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="hcgl-eureka" />
+        <module name="hcgl-provider-cgjl" />
+        <module name="hcgl-provider-hcwh" />
+        <module name="hcgl-provider-kcgl" />
+        <module name="hcgl-provider-sqjl" />
+        <module name="hcgl-provider-xtgn" />
+        <module name="hcgl-provider-xtgn-api" />
+        <module name="hcgl-zuul" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
