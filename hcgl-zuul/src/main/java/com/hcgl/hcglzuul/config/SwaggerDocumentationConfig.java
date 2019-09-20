@@ -30,12 +30,16 @@ public class SwaggerDocumentationConfig implements SwaggerResourcesProvider {
     public List<SwaggerResource> get() {
         List<SwaggerResource> resources = new ArrayList<>();
         List<Route> routes = routeLocator.getRoutes();
-        System.out.println(Arrays.toString(routes.toArray()));
+//        System.out.println(Arrays.toString(routes.toArray()));
         routes.forEach(route -> {
+//            System.out.println(route.getFullPath());
+//            System.out.println(route.getFullPath().split("/")[1]);
+//            System.out.println(route.getFullPath().replace("/**", "/v2/api-docs"));
             resources.add(
-                    swaggerResource(route.getFullPath().split("/")[1], route.getFullPath().replace("/**", "/v2/api-docs"), "2.0")
+                    swaggerResource(route.getFullPath().split("/")[1], route.getFullPath().replace("/**", "/v2/api" +
+                            "-docs"), "2.0")
             );
-            System.out.println(route.getFullPath().replace("/**", "/v2/api-docs"));
+//            System.out.println(route.getFullPath().replace("/**", "/v2/api-docs"));
         });
         return resources;
     }

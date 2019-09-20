@@ -35,7 +35,7 @@ public class SwaggerConfig {
                 .description("系统接口文档说明")
                 .termsOfServiceUrl("http://localhost:5000")
                 .contact(new Contact("zhuosheng","","284696920@qq.com"))
-                .version("1.0")
+                .version("2.0")
                 .build();
     }
 

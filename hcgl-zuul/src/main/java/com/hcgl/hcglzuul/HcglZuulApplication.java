@@ -20,25 +20,6 @@ public class HcglZuulApplication {
     }
 
 
-//    /**
-//     * 添加跨域访问
-//     *
-//     * @return
-//     */
-//    @Bean
-//    public CorsFilter corsFilter() {
-//
-//        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//        final CorsConfiguration config = new CorsConfiguration();
-//
-//        config.setAllowCredentials(true);
-//        config.addAllowedOrigin("*");
-//        config.addAllowedHeader("*");
-//        config.addAllowedMethod("*");
-//        config.setMaxAge(3600L);
-//        source.registerCorsConfiguration("/**", config);
-//        return new CorsFilter(source);
-//    }
 
 
 }

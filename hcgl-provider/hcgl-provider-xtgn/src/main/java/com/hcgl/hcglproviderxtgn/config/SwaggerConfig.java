@@ -1,6 +1,8 @@
 package com.hcgl.hcglproviderxtgn.config;
 
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -21,17 +23,19 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.hcgl.hcglproviderxtgn.controller"))
+                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
                 .paths(PathSelectors.any())
                 .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("耗材管理系统-系统模块")
+                .title("耗材管理系统")
                 .description("耗材管理系统-系统模块接口文档说明")
                 .termsOfServiceUrl("http://localhost:5000")
                 .contact(new Contact("古天乐", "", "284696920@qq.com"))
-                .version("1.0")
+                .version("2.0")
                 .build();
     }
 }
