@@ -40,15 +40,7 @@ public class QysswjXxzxTYwLxwhController {
     @Value ("${pageSize}")
     private int pageSize;
 
-    //    @Value ("${myname}")
-//    private String myname;
-//
-    @RequestMapping ("/toTest")
-    public int toTest() {
-        System.out.println(pageSize);
-        System.out.println(myConfig.getPageSize());
-        return pageSize;
-    }
+
 
 
     @ApiOperation (value = "获取所有在用类型，并且分页", notes = "1.返回List。2.页码大于等于1")
@@ -63,7 +55,7 @@ public class QysswjXxzxTYwLxwhController {
                                                @RequestParam (required = true) int pageNum) {
         lxwhList = new ArrayList<>();
         try {
-            lxwhList = qysswjXxzxTYwLxwhService.getLxwhList(searchContent, pageNum, myConfig.getPageSize());
+            lxwhList = qysswjXxzxTYwLxwhService.getLxwhList(searchContent, pageNum, pageSize);
         } catch (Exception e) {
             e.printStackTrace();
         }

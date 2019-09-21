@@ -16,8 +16,10 @@ import java.util.List;
 public interface QysswjXxzxTYwLxwhDao {
 
 
-    List<QysswjXxzxTYwLxwh> selectAllLxwh(@Param ("pageSize") String pageSize, @Param ("pageNum") int pageNum,
-                                          @Param ("searchContent") int searchContent);
+    List<QysswjXxzxTYwLxwh> selectAllLxwh(@Param ("searchContent") String searchContent,
+                                          @Param ("pageNum") int pageNum,
+                                          @Param ("pageSize") int pageSize
+    );
 
     void insertLxwh(@Param ("lxmc") String lxmc);
 
