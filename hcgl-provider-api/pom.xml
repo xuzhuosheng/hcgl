@@ -11,6 +11,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>hcgl-provider-xtgn-api</module>
+        <module>hcgl-provider-sqjl-api</module>
+        <module>hcgl-provider-kcgl-api</module>
+        <module>hcgl-provider-hcwh-api</module>
+        <module>hcgl-provider-cgjl-api</module>
     </modules>
 
     <artifactId>hcgl-provider-api</artifactId>

@@ -1,0 +1,136 @@
+package com.hcgl.hcglproviderhcwh.controller;
+
+import com.hcgl.hcglproviderhcwh.config.MyConfig;
+import com.hcgl.hcglproviderhcwh.entity.QysswjXxzxTYwLxwh;
+import com.hcgl.hcglproviderhcwh.service.QysswjXxzxTYwLxwhService;
+import io.swagger.annotations.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * (QysswjXxzxTYwLxwh)表控制层
+ *
+ * @author makejava
+ * @since 2019-09-21 09:59:24
+ */
+@Api (value = "耗材维护-类型维护", description = "类型维护类")
+@RestController
+@RequestMapping ("/Lxwh")
+@PropertySource ("classpath:application.yml")
+public class QysswjXxzxTYwLxwhController {
+    /**
+     * 服务对象
+     */
+    @Resource
+    private QysswjXxzxTYwLxwhService qysswjXxzxTYwLxwhService;
+
+
+    private List<QysswjXxzxTYwLxwh> lxwhList;
+
+    @Autowired
+    private MyConfig myConfig;
+
+    @Value ("${pageSize}")
+    private int pageSize;
+
+    //    @Value ("${myname}")
+//    private String myname;
+//
+    @RequestMapping ("/toTest")
+    public int toTest() {
+        System.out.println(pageSize);
+        System.out.println(myConfig.getPageSize());
+        return pageSize;
+    }
+
+
+    @ApiOperation (value = "获取所有在用类型，并且分页", notes = "1.返回List。2.页码大于等于1")
+    @ApiImplicitParams ({
+            @ApiImplicitParam (name = "searchContent", value = "搜索内容", paramType = "query", required = false),
+            @ApiImplicitParam (name = "pageNum", value = "页码", paramType = "query", required = true)
+    })
+    @ApiResponse (code = 400, message = "参数没有填好", response = String.class)
+    @RequestMapping (value = "/getLxwhList", method = RequestMethod.POST)
+    @ResponseBody
+    public List<QysswjXxzxTYwLxwh> getLxwhList(@RequestParam (required = false) String searchContent,
+                                               @RequestParam (required = true) int pageNum) {
+        lxwhList = new ArrayList<>();
+        try {
+            lxwhList = qysswjXxzxTYwLxwhService.getLxwhList(searchContent, pageNum, myConfig.getPageSize());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return lxwhList;
+    }
+
+    @ApiOperation (value = "新增保存", notes = "返回字符串，成功返回success，失败返回error")
+    @ApiImplicitParam (name = "lxmc", value = "类型名称", paramType = "query", required = true)
+    @ApiResponse (code = 400, message = "参数没有填好", response = String.class)
+    @RequestMapping (value = "/addLxwh", method = RequestMethod.POST)
+    @ResponseBody
+    public String addLxwh(@RequestParam (required = false) String lxmc) {
+        String resultStr = "success";
+        try {
+            qysswjXxzxTYwLxwhService.addLxwh(lxmc);
+        } catch (Exception e) {
+            resultStr = "error";
+            e.printStackTrace();
+        }
+        return resultStr;
+    }
+
+
+    @ApiOperation (value = "修改后保存", notes = "返回字符串，成功返回success，失败返回error")
+    @ApiImplicitParams (
+            {
+                    @ApiImplicitParam (name = "id", value = "主键id", paramType = "query", required = true),
+                    @ApiImplicitParam (name = "lxmc", value = "类型名称", paramType = "query", required = true)
+
+            }
+    )
+    @ApiResponse (code = 400, message = "参数没有填好", response = String.class)
+    @RequestMapping (value = "/editLxwh", method = RequestMethod.POST)
+    @ResponseBody
+    public String editLxwh(@RequestParam (required = false) String lxmc, @RequestParam (required = false) String id) {
+        String resultStr = "success";
+        try {
+            qysswjXxzxTYwLxwhService.editLxwh(id, lxmc);
+        } catch (Exception e) {
+            resultStr = "error";
+            e.printStackTrace();
+        }
+        return resultStr;
+    }
+
+    @ApiOperation (value = "单个删除和批量删除", notes = "实际上是更新状态。返回字符串，成功返回success，失败返回error")
+    @ApiImplicitParams (
+            {
+                    @ApiImplicitParam (name = "ids", value = "主键id的字符串。格式：id1，id2，idn", paramType = "query", required
+                            = true)
+            }
+    )
+    @ApiResponse (code = 400, message = "参数没有填好", response = String.class)
+    @RequestMapping (value = "/editLxwhZt", method = RequestMethod.POST)
+    @ResponseBody
+    public String editLxwhZt(@RequestParam (required = true) String ids) {
+        String resultStr = "success";
+        try {
+            String idArr[] = ids.split(",");
+            List<String> idList = Arrays.asList(idArr);
+            qysswjXxzxTYwLxwhService.editLxwhZt(idList);
+        } catch (Exception e) {
+            resultStr = "error";
+            e.printStackTrace();
+        }
+        return resultStr;
+    }
+
+
+}

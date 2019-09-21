@@ -15,3 +15,12 @@ eureka:
   instance:
     prefer-ip-address: true
 
+
+    #####
+
+zuul:
+  host:
+    connect-timeout-millis: 15000
+    socket-timeout-millis: 60000
+
+

@@ -8,9 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="hcgl-eureka" />
         <module name="hcgl-provider-cgjl" />
+        <module name="hcgl-provider-cgjl-api" />
         <module name="hcgl-provider-hcwh" />
+        <module name="hcgl-provider-hcwh-api" />
         <module name="hcgl-provider-kcgl" />
+        <module name="hcgl-provider-kcgl-api" />
         <module name="hcgl-provider-sqjl" />
+        <module name="hcgl-provider-sqjl-api" />
         <module name="hcgl-provider-xtgn" />
         <module name="hcgl-provider-xtgn-api" />
         <module name="hcgl-zuul" />

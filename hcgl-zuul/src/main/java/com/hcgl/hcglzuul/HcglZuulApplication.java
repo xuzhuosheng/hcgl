@@ -1,6 +1,7 @@
 package com.hcgl.hcglzuul;
 
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -15,11 +16,12 @@ import org.springframework.web.filter.CorsFilter;
 @EnableEurekaClient
 @EnableZuulProxy
 public class HcglZuulApplication {
+
+
+
     public static void main(String[] args) {
         SpringApplication.run(HcglZuulApplication.class, args);
     }
-
-
 
 
 }
