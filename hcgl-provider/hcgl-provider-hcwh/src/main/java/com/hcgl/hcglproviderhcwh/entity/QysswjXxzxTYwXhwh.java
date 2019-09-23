@@ -6,20 +6,12 @@ import java.io.Serializable;
  * (QysswjXxzxTYwXhwh)实体类
  *
  * @author makejava
- * @since 2019-09-21 10:02:28
+ * @since 2019-09-23 16:13:24
  */
 public class QysswjXxzxTYwXhwh implements Serializable {
-    private static final long serialVersionUID = -52414028846386341L;
+    private static final long serialVersionUID = 581961162223242833L;
     //主键 ID
     private Integer id;
-    //类型ID
-    private String lxid;
-    //类型名称
-    private String lxmc;
-    //品牌ID
-    private String ppid;
-    //品牌名称
-    private String ppmc;
     //型号
     private String xhmc;
     //创建时间
@@ -36,38 +28,6 @@ public class QysswjXxzxTYwXhwh implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getLxid() {
-        return lxid;
-    }
-
-    public void setLxid(String lxid) {
-        this.lxid = lxid;
-    }
-
-    public String getLxmc() {
-        return lxmc;
-    }
-
-    public void setLxmc(String lxmc) {
-        this.lxmc = lxmc;
-    }
-
-    public String getPpid() {
-        return ppid;
-    }
-
-    public void setPpid(String ppid) {
-        this.ppid = ppid;
-    }
-
-    public String getPpmc() {
-        return ppmc;
-    }
-
-    public void setPpmc(String ppmc) {
-        this.ppmc = ppmc;
     }
 
     public String getXhmc() {

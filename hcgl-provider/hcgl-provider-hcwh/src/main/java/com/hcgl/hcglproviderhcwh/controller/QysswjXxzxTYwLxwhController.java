@@ -43,7 +43,7 @@ public class QysswjXxzxTYwLxwhController {
 
 
 
-    @ApiOperation (value = "获取所有在用类型，并且分页", notes = "1.返回List。2.页码大于等于1")
+    @ApiOperation (value = "获取所有在用类型，并且分页", notes = "1.返回List。2.页码大于0,分页")
     @ApiImplicitParams ({
             @ApiImplicitParam (name = "searchContent", value = "搜索内容", paramType = "query", required = false),
             @ApiImplicitParam (name = "pageNum", value = "页码", paramType = "query", required = true)
@@ -61,6 +61,19 @@ public class QysswjXxzxTYwLxwhController {
         }
         return lxwhList;
     }
+
+//    @ApiOperation (value = "根据id获取", notes = "1.返回List。2.页码大于0,分页")
+//    @ApiImplicitParams ({
+//            @ApiImplicitParam (name = "searchContent", value = "搜索内容", paramType = "query", required = false),
+//            @ApiImplicitParam (name = "pageNum", value = "页码", paramType = "query", required = true)
+//    })
+//    @ApiResponse (code = 400, message = "参数没有填好", response = String.class)
+//    @RequestMapping (value = "/getLxwhList", method = RequestMethod.POST)
+//    @ResponseBody
+//public QysswjXxzxTYwLxwh getLxwhById(){
+//
+//}
+
 
     @ApiOperation (value = "新增保存", notes = "返回字符串，成功返回success，失败返回error")
     @ApiImplicitParam (name = "lxmc", value = "类型名称", paramType = "query", required = true)

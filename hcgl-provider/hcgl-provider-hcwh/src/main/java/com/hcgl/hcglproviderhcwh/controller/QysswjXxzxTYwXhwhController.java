@@ -1,6 +1,5 @@
 package com.hcgl.hcglproviderhcwh.controller;
 
-import com.hcgl.hcglproviderhcwh.entity.QysswjXxzxTYwXhwh;
 import com.hcgl.hcglproviderhcwh.service.QysswjXxzxTYwXhwhService;
 import org.springframework.web.bind.annotation.*;
 

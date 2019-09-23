@@ -18,12 +18,14 @@
         <where>
             zt = '1'
             <if test="searchContent!=null and searchContent!='' ">
-               /* and lxmc like concat( concat("%",#{searchContent}),"%" )*/
+                /* and lxmc like concat( concat("%",#{searchContent}),"%" )*/
                 and lxmc like '%${searchContent}%'
             </if>
         </where>
         order by createtime
-        limit ${(pageNum-1)*pageSize},${pageNum*pageSize}
+        <if test="pageNum>0">
+            limit ${(pageNum-1)*pageSize},${pageNum*pageSize}
+        </if>
 
     </select>
 

@@ -2,6 +2,7 @@ package com.hcgl.hcglproviderhcwh.dao;
 
 import com.hcgl.hcglproviderhcwh.entity.QysswjXxzxTYwPpwh;
 import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 /**
@@ -12,6 +13,15 @@ import java.util.List;
  */
 public interface QysswjXxzxTYwPpwhDao {
 
-   
 
+    List<QysswjXxzxTYwPpwh> selectAllPpwh(@Param ("lxmc") String lxmc, @Param ("ppmc") String ppmc,
+                                          @Param ("pageNum") int pageNum, @Param ("pageSize") int pageSize);
+
+    void insertPpwh(@Param ("lxid") String lxid, @Param ("lxmc") String lxmc, @Param ("ppmc") String ppmc);
+
+    void updatePpwh(@Param ("id") String id, @Param ("ppmc") String ppmc);
+
+    void updatePpwhZt(@Param ("idList") List<String> idList);
+
+//    int insertPpwh(@Param ("ppmc") String ppmc);
 }

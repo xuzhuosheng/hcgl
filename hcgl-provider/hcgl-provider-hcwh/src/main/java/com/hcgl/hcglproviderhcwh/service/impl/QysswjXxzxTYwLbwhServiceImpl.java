@@ -1,12 +1,10 @@
 package com.hcgl.hcglproviderhcwh.service.impl;
 
-import com.hcgl.hcglproviderhcwh.entity.QysswjXxzxTYwLbwh;
 import com.hcgl.hcglproviderhcwh.dao.QysswjXxzxTYwLbwhDao;
 import com.hcgl.hcglproviderhcwh.service.QysswjXxzxTYwLbwhService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * (QysswjXxzxTYwLbwh)表服务实现类

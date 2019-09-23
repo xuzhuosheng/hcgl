@@ -1,9 +1,5 @@
 package com.hcgl.hcglproviderhcwh.dao;
 
-import com.hcgl.hcglproviderhcwh.entity.QysswjXxzxTYwLbwh;
-import org.apache.ibatis.annotations.Param;
-import java.util.List;
-
 /**
  * (QysswjXxzxTYwLbwh)表数据库访问层
  *

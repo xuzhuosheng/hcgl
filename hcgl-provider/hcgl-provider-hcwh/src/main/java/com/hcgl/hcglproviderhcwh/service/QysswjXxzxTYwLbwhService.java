@@ -1,8 +1,5 @@
 package com.hcgl.hcglproviderhcwh.service;
 
-import com.hcgl.hcglproviderhcwh.entity.QysswjXxzxTYwLbwh;
-import java.util.List;
-
 /**
  * (QysswjXxzxTYwLbwh)表服务接口
  *

@@ -16,42 +16,7 @@
     "custom" : false,
     "ext" : { }
   }, {
-    "name" : "lxmc",
-    "comment" : null,
-    "type" : null,
-    "shortType" : null,
-    "custom" : false,
-    "ext" : { }
-  }, {
-    "name" : "lxid",
-    "comment" : null,
-    "type" : null,
-    "shortType" : null,
-    "custom" : false,
-    "ext" : { }
-  }, {
-    "name" : "ppmc",
-    "comment" : null,
-    "type" : null,
-    "shortType" : null,
-    "custom" : false,
-    "ext" : { }
-  }, {
-    "name" : "ppid",
-    "comment" : null,
-    "type" : null,
-    "shortType" : null,
-    "custom" : false,
-    "ext" : { }
-  }, {
-    "name" : "xhmc",
-    "comment" : null,
-    "type" : null,
-    "shortType" : null,
-    "custom" : false,
-    "ext" : { }
-  }, {
-    "name" : "xhid",
+    "name" : "ysdj",
     "comment" : null,
     "type" : null,
     "shortType" : null,

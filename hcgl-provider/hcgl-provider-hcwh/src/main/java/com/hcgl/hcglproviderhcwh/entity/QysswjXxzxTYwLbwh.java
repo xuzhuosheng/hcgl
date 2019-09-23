@@ -6,26 +6,16 @@ import java.io.Serializable;
  * (QysswjXxzxTYwLbwh)实体类
  *
  * @author makejava
- * @since 2019-09-21 10:03:41
+ * @since 2019-09-23 16:13:37
  */
 public class QysswjXxzxTYwLbwh implements Serializable {
-    private static final long serialVersionUID = -88725904170856102L;
+    private static final long serialVersionUID = 615980671442413298L;
     //主键id
     private Integer id;
     //类别名称
     private String lbmc;
-    //类型名称
-    private String lxmc;
-    //类型id
-    private String lxid;
-    //品牌名称
-    private String ppmc;
-    //品牌id
-    private String ppid;
-    //型号名称
-    private String xhmc;
-    //型号id
-    private String xhid;
+    //预算单价
+    private Double ysdj;
     //创建时间
     private Object createtime;
     //状态
@@ -50,52 +40,12 @@ public class QysswjXxzxTYwLbwh implements Serializable {
         this.lbmc = lbmc;
     }
 
-    public String getLxmc() {
-        return lxmc;
+    public Double getYsdj() {
+        return ysdj;
     }
 
-    public void setLxmc(String lxmc) {
-        this.lxmc = lxmc;
-    }
-
-    public String getLxid() {
-        return lxid;
-    }
-
-    public void setLxid(String lxid) {
-        this.lxid = lxid;
-    }
-
-    public String getPpmc() {
-        return ppmc;
-    }
-
-    public void setPpmc(String ppmc) {
-        this.ppmc = ppmc;
-    }
-
-    public String getPpid() {
-        return ppid;
-    }
-
-    public void setPpid(String ppid) {
-        this.ppid = ppid;
-    }
-
-    public String getXhmc() {
-        return xhmc;
-    }
-
-    public void setXhmc(String xhmc) {
-        this.xhmc = xhmc;
-    }
-
-    public String getXhid() {
-        return xhid;
-    }
-
-    public void setXhid(String xhid) {
-        this.xhid = xhid;
+    public void setYsdj(Double ysdj) {
+        this.ysdj = ysdj;
     }
 
     public Object getCreatetime() {

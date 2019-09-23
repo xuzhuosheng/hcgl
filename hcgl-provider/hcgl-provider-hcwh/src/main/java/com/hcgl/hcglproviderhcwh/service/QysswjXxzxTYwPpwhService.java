@@ -1,6 +1,7 @@
 package com.hcgl.hcglproviderhcwh.service;
 
 import com.hcgl.hcglproviderhcwh.entity.QysswjXxzxTYwPpwh;
+
 import java.util.List;
 
 /**
@@ -11,6 +12,14 @@ import java.util.List;
  */
 public interface QysswjXxzxTYwPpwhService {
 
-  
 
+    List<QysswjXxzxTYwPpwh> getPpwhList(String lxmc, String ppmc, int pageNum, int pageSize);
+
+    void addPpwh(String lxid, String lxmc, String ppmc);
+
+    void editPpwh(String id, String ppmc);
+
+    void editPpwhZt(List<String> idList);
+
+//    int addPpwh(String ppmc);
 }
