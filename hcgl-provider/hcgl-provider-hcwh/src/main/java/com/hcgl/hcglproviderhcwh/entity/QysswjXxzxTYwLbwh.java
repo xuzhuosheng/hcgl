@@ -6,16 +6,22 @@ import java.io.Serializable;
  * (QysswjXxzxTYwLbwh)实体类
  *
  * @author makejava
- * @since 2019-09-23 16:13:37
+ * @since 2019-09-25 09:33:43
  */
 public class QysswjXxzxTYwLbwh implements Serializable {
-    private static final long serialVersionUID = 615980671442413298L;
+    private static final long serialVersionUID = 204880355089280952L;
     //主键id
     private Integer id;
     //类别名称
     private String lbmc;
     //预算单价
-    private Double ysdj;
+    private String ysdj;
+    
+    private Integer kcl;
+    
+    private String xhid;
+    
+    private String xhmc;
     //创建时间
     private Object createtime;
     //状态
@@ -40,12 +46,36 @@ public class QysswjXxzxTYwLbwh implements Serializable {
         this.lbmc = lbmc;
     }
 
-    public Double getYsdj() {
+    public String getYsdj() {
         return ysdj;
     }
 
-    public void setYsdj(Double ysdj) {
+    public void setYsdj(String ysdj) {
         this.ysdj = ysdj;
+    }
+
+    public Integer getKcl() {
+        return kcl;
+    }
+
+    public void setKcl(Integer kcl) {
+        this.kcl = kcl;
+    }
+
+    public String getXhid() {
+        return xhid;
+    }
+
+    public void setXhid(String xhid) {
+        this.xhid = xhid;
+    }
+
+    public String getXhmc() {
+        return xhmc;
+    }
+
+    public void setXhmc(String xhmc) {
+        this.xhmc = xhmc;
     }
 
     public Object getCreatetime() {

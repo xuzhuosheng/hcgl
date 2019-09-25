@@ -6,14 +6,18 @@ import java.io.Serializable;
  * (QysswjXxzxTYwXhwh)实体类
  *
  * @author makejava
- * @since 2019-09-23 16:13:24
+ * @since 2019-09-25 09:33:43
  */
 public class QysswjXxzxTYwXhwh implements Serializable {
-    private static final long serialVersionUID = 581961162223242833L;
+    private static final long serialVersionUID = 899828646417005723L;
     //主键 ID
     private Integer id;
     //型号
     private String xhmc;
+    
+    private String ppid;
+    
+    private String ppmc;
     //创建时间
     private Object createtime;
     //状态
@@ -36,6 +40,22 @@ public class QysswjXxzxTYwXhwh implements Serializable {
 
     public void setXhmc(String xhmc) {
         this.xhmc = xhmc;
+    }
+
+    public String getPpid() {
+        return ppid;
+    }
+
+    public void setPpid(String ppid) {
+        this.ppid = ppid;
+    }
+
+    public String getPpmc() {
+        return ppmc;
+    }
+
+    public void setPpmc(String ppmc) {
+        this.ppmc = ppmc;
     }
 
     public Object getCreatetime() {

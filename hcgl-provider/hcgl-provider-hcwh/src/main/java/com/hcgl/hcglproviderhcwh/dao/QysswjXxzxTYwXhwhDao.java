@@ -1,5 +1,10 @@
 package com.hcgl.hcglproviderhcwh.dao;
 
+import com.hcgl.hcglproviderhcwh.entity.QysswjXxzxTYwXhwh;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+
 /**
  * (QysswjXxzxTYwXhwh)表数据库访问层
  *
@@ -8,6 +13,8 @@ package com.hcgl.hcglproviderhcwh.dao;
  */
 public interface QysswjXxzxTYwXhwhDao {
 
-   
 
+    List<QysswjXxzxTYwXhwh> selectAllXhwh(@Param ("lxid") String lxid, @Param ("ppid") String ppid,
+                                          @Param ("xhmc") String xhmc, @Param ("pageNum") int pageNum,
+                                          @Param ("pageSize") int pageSize);
 }

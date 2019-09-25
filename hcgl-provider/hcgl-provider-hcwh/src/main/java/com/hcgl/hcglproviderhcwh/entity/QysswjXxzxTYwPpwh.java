@@ -1,22 +1,25 @@
 package com.hcgl.hcglproviderhcwh.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * (QysswjXxzxTYwPpwh)实体类
  *
  * @author makejava
- * @since 2019-09-23 16:13:06
+ * @since 2019-09-25 09:33:43
  */
 public class QysswjXxzxTYwPpwh implements Serializable {
-    private static final long serialVersionUID = 339617314701449342L;
+    private static final long serialVersionUID = 418220045912918781L;
     //主键ID
     private Integer id;
     //品牌名称
     private String ppmc;
+    
+    private String lxid;
+    
+    private String lxmc;
     //创建时间
-    private Date createtime;
+    private Object createtime;
     //状态
     private String zt;
     //备注
@@ -39,11 +42,27 @@ public class QysswjXxzxTYwPpwh implements Serializable {
         this.ppmc = ppmc;
     }
 
-    public Date getCreatetime() {
+    public String getLxid() {
+        return lxid;
+    }
+
+    public void setLxid(String lxid) {
+        this.lxid = lxid;
+    }
+
+    public String getLxmc() {
+        return lxmc;
+    }
+
+    public void setLxmc(String lxmc) {
+        this.lxmc = lxmc;
+    }
+
+    public Object getCreatetime() {
         return createtime;
     }
 
-    public void setCreatetime(Date createtime) {
+    public void setCreatetime(Object createtime) {
         this.createtime = createtime;
     }
 

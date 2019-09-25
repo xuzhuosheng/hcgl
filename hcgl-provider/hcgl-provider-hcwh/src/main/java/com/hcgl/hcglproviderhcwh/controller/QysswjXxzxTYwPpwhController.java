@@ -38,20 +38,20 @@ public class QysswjXxzxTYwPpwhController {
 
     @ApiOperation (value = "获取所有在用品牌，并且分页", notes = "1.返回List。2.页码大于0,分页 ")
     @ApiImplicitParams ({
-            @ApiImplicitParam (name = "lxmc", value = "类型名称", paramType = "query", required = false),
+            @ApiImplicitParam (name = "lxid", value = "类型id,通过下拉方式获取到类型id", paramType = "query", required = false),
             @ApiImplicitParam (name = "ppmc", value = "品牌名称", paramType = "query", required = false),
             @ApiImplicitParam (name = "pageNum", value = "页码", paramType = "query", required = true)
     })
     @ApiResponse (code = 400, message = "参数没有填好", response = String.class)
     @RequestMapping (value = "/getPpwhList", method = RequestMethod.POST)
     @ResponseBody
-    public List<QysswjXxzxTYwPpwh> getPpwhList(@RequestParam (required = false) String lxmc,
+    public List<QysswjXxzxTYwPpwh> getPpwhList(@RequestParam (required = false) String lxid,
                                                @RequestParam (required = false) String ppmc,
                                                @RequestParam (required = true) int pageNum
     ) {
         ppwhList = new ArrayList<>();
         try {
-            ppwhList = qysswjXxzxTYwPpwhService.getPpwhList(lxmc, ppmc, pageNum, pageSize);
+            ppwhList = qysswjXxzxTYwPpwhService.getPpwhList(lxid, ppmc, pageNum, pageSize);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -81,6 +81,24 @@ public class QysswjXxzxTYwPpwhController {
         return resultStr;
 
     }
+
+    @ApiOperation (value = "根据id获取品牌信息", notes = "返回品牌对象")
+    @ApiImplicitParams ({
+            @ApiImplicitParam (name = "id", value = "品牌主键id", paramType = "query", required = true)
+    })
+    @ApiResponse (code = 400, message = "参数没有填好", response = String.class)
+    @RequestMapping (value = "/getPpwhById", method = RequestMethod.POST)
+    @ResponseBody
+    public QysswjXxzxTYwPpwh getPpwhById(@RequestParam (required = true) String id) {
+        QysswjXxzxTYwPpwh qysswjXxzxTYwPpwh = new QysswjXxzxTYwPpwh();
+        try {
+            qysswjXxzxTYwPpwh = qysswjXxzxTYwPpwhService.getPpwhById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return qysswjXxzxTYwPpwh;
+    }
+
 
     @ApiOperation (value = "修改后保存", notes = "返回字符串，成功返回success，失败返回error")
     @ApiImplicitParams ({

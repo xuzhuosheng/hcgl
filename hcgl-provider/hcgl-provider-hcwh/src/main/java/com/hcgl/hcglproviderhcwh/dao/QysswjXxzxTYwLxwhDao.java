@@ -26,4 +26,6 @@ public interface QysswjXxzxTYwLxwhDao {
     void updateLxwh(@Param ("id") String id, @Param ("lxmc") String lxmc);
 
     void updateLxwhZt(@Param ("idList") List<String> idList);
+
+    QysswjXxzxTYwLxwh selectOneById(@Param ("id") String id);
 }

@@ -12,28 +12,44 @@
         <result property="bz" column="bz" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <!--查询单个-->
+    <!--查询所有记录-->
     <select id="selectAllPpwh" resultMap="QysswjXxzxTYwPpwhMap">
         select
         id, ppmc, lxid, lxmc, createtime, zt, bz
         from qysw.qysswj_xxzx_t_yw_ppwh
         <where>
             1=1
-            <if test="lxmc!=null and lxmc!='' ">
-                and lxmc like '%${lxmc}%'
+            and zt='1'
+            <if test="lxid!=null and lxid!='' ">
+                and lxid =#{lxid}
             </if>
             <if test="ppmc!=null and ppmc!=''">
                 and ppmc like '%${ppmc}%'
             </if>
-            order by createtime
-            <if test="pageNum>0">
-                limit ${(pageNum-1)*pageSize},${pageNum*pageSize}
-            </if>
+        </where>
+        order by createtime desc
+        <if test="pageNum>0">
+            limit ${(pageNum-1)*pageSize},${pageNum*pageSize}
+        </if>
+    </select>
 
+    <!--查询单个记录-->
+    <select id="selectOneById" resultMap="QysswjXxzxTYwPpwhMap">
+        select
+        id, ppmc, lxid, lxmc, createtime, zt, bz
+        from qysw.qysswj_xxzx_t_yw_ppwh
+        <where>
+            1=1
+            and zt='1'
+            <if test="id!=null and id!='' ">
+                and id=#{id}
+            </if>
 
         </where>
 
     </select>
+
+
     <!--新增所有列-->
     <insert id="insertPpwh" useGeneratedKeys="true">
     insert into qysw.qysswj_xxzx_t_yw_ppwh(ppmc, lxid, lxmc, createtime, zt)
@@ -42,19 +58,21 @@
 
 
     <!--通过主键修改数据-->
-    <update id="update">
+    <update id="updatePpwh">
         update qysw.qysswj_xxzx_t_yw_ppwh
         <set>
             <if test="ppmc!=null and ppmc!=''">
                 ppmc=#{ppmc}
             </if>
         </set>
-        where id = #{id}
+        <where>
+            id = #{id}
+        </where>
     </update>
 
     <!--&lt;!&ndash;通过主键单个或批量修改数据状态&ndash;&gt;-->
     <update id="updatePpwhZt">
-        update ysw.qysswj_xxzx_t_yw_ppwh
+        update qysw.qysswj_xxzx_t_yw_ppwh
         <set>
             zt='0'
         </set>
@@ -65,77 +83,6 @@
             </foreach>
         </where>
     </update>
-
-
-    <!--&lt;!&ndash;查询指定行数据&ndash;&gt;-->
-    <!--<select id="queryAllByLimit" resultMap="QysswjXxzxTYwPpwhMap">-->
-    <!--select-->
-    <!--id, ppmc, lxid, lxmc, createtime, zt, bz-->
-    <!--from qysw.qysswj_xxzx_t_yw_ppwh-->
-    <!--limit #{offset}, #{limit}-->
-    <!--</select>-->
-
-    <!--&lt;!&ndash;通过实体作为筛选条件查询&ndash;&gt;-->
-    <!--<select id="queryAll" resultMap="QysswjXxzxTYwPpwhMap">-->
-    <!--select-->
-    <!--id, ppmc, lxid, lxmc, createtime, zt, bz-->
-    <!--from qysw.qysswj_xxzx_t_yw_ppwh-->
-    <!--<where>-->
-    <!--<if test="id != null">-->
-    <!--and id = #{id}-->
-    <!--</if>-->
-    <!--<if test="ppmc != null and ppmc != ''">-->
-    <!--and ppmc = #{ppmc}-->
-    <!--</if>-->
-    <!--<if test="lxid != null and lxid != ''">-->
-    <!--and lxid = #{lxid}-->
-    <!--</if>-->
-    <!--<if test="lxmc != null and lxmc != ''">-->
-    <!--and lxmc = #{lxmc}-->
-    <!--</if>-->
-    <!--<if test="createtime != null">-->
-    <!--and createtime = #{createtime}-->
-    <!--</if>-->
-    <!--<if test="zt != null and zt != ''">-->
-    <!--and zt = #{zt}-->
-    <!--</if>-->
-    <!--<if test="bz != null and bz != ''">-->
-    <!--and bz = #{bz}-->
-    <!--</if>-->
-    <!--</where>-->
-    <!--</select>-->
-
-    <!--&lt;!&ndash;新增所有列&ndash;&gt;-->
-    <!--<insert id="insert" keyProperty="id" useGeneratedKeys="true">-->
-    <!--insert into qysw.qysswj_xxzx_t_yw_ppwh(ppmc, lxid, lxmc, createtime, zt, bz)-->
-    <!--values (#{ppmc}, #{lxid}, #{lxmc}, #{createtime}, #{zt}, #{bz})-->
-    <!--</insert>-->
-
-    <!--&lt;!&ndash;通过主键修改数据&ndash;&gt;-->
-    <!--<update id="update">-->
-    <!--update qysw.qysswj_xxzx_t_yw_ppwh-->
-    <!--<set>-->
-    <!--<if test="ppmc != null and ppmc != ''">-->
-    <!--ppmc = #{ppmc},-->
-    <!--</if>-->
-    <!--<if test="lxid != null and lxid != ''">-->
-    <!--lxid = #{lxid},-->
-    <!--</if>-->
-    <!--<if test="lxmc != null and lxmc != ''">-->
-    <!--lxmc = #{lxmc},-->
-    <!--</if>-->
-    <!--<if test="createtime != null">-->
-    <!--createtime = #{createtime},-->
-    <!--</if>-->
-    <!--<if test="zt != null and zt != ''">-->
-    <!--zt = #{zt},-->
-    <!--</if>-->
-    <!--<if test="bz != null and bz != ''">-->
-    <!--bz = #{bz},-->
-    <!--</if>-->
-    <!--</set>-->
-    <!--where id = #{id}-->
-    <!--</update>-->
 
     <!--&lt;!&ndash;通过主键删除&ndash;&gt;-->
     <!--<delete id="deleteById">-->

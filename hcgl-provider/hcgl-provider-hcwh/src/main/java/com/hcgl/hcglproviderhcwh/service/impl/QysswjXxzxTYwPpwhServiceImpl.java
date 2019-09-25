@@ -22,8 +22,8 @@ public class QysswjXxzxTYwPpwhServiceImpl implements QysswjXxzxTYwPpwhService {
     private List<QysswjXxzxTYwPpwh> ppwhList;
 
     @Override
-    public List<QysswjXxzxTYwPpwh> getPpwhList(String lxmc, String ppmc, int pageNum, int pageSize) {
-        ppwhList = qysswjXxzxTYwPpwhDao.selectAllPpwh(lxmc, ppmc, pageNum, pageSize);
+    public List<QysswjXxzxTYwPpwh> getPpwhList(String lxid, String ppmc, int pageNum, int pageSize) {
+        ppwhList = qysswjXxzxTYwPpwhDao.selectAllPpwh(lxid, ppmc, pageNum, pageSize);
         return ppwhList;
     }
 
@@ -40,6 +40,13 @@ public class QysswjXxzxTYwPpwhServiceImpl implements QysswjXxzxTYwPpwhService {
     @Override
     public void editPpwhZt(List<String> idList) {
         qysswjXxzxTYwPpwhDao.updatePpwhZt(idList);
+    }
+
+    @Override
+    public QysswjXxzxTYwPpwh getPpwhById(String id) {
+        QysswjXxzxTYwPpwh qysswjXxzxTYwPpwh = new QysswjXxzxTYwPpwh();
+        qysswjXxzxTYwPpwh = qysswjXxzxTYwPpwhDao.selectOneById(id);
+        return qysswjXxzxTYwPpwh;
     }
 
 //    @Override

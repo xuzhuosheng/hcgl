@@ -23,6 +23,27 @@
     "custom" : false,
     "ext" : { }
   }, {
+    "name" : "kcl",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "xhid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "xhmc",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
     "name" : "createtime",
     "comment" : null,
     "type" : null,
@@ -47,6 +68,6 @@
   "pkColumn" : null,
   "otherColumn" : null,
   "savePackageName" : "com.hcgl.hcglproviderhcwh",
-  "savePath" : "./hcgl-provider/hcgl-provider-hcwh/src/main/java/com/hcgl/hcglproviderhcwh",
+  "savePath" : "./hcgl-provider/hcgl-provider-hcwh/src/main/java/com/hcgl/hcglproviderhcwh/",
   "saveModelName" : "hcgl-provider-hcwh"
 }

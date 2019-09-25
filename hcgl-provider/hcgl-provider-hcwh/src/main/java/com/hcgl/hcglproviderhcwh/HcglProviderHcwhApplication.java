@@ -11,17 +11,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 @MapperScan ("com.hcgl.hcglproviderhcwh.dao")
 public class HcglProviderHcwhApplication {
-
-    @Value ("${myname}")
-    private static String myname;
-
-    @Value ("${pageSize}")
-    private static String pageSize;
-
-
     public static void main(String[] args) {
-        System.out.println(myname);
-        System.out.println(pageSize);
         SpringApplication.run(HcglProviderHcwhApplication.class, args);
     }
 

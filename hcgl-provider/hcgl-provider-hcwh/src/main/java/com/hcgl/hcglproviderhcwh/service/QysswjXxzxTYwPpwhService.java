@@ -13,13 +13,15 @@ import java.util.List;
 public interface QysswjXxzxTYwPpwhService {
 
 
-    List<QysswjXxzxTYwPpwh> getPpwhList(String lxmc, String ppmc, int pageNum, int pageSize);
+    List<QysswjXxzxTYwPpwh> getPpwhList(String lxid, String ppmc, int pageNum, int pageSize);
 
     void addPpwh(String lxid, String lxmc, String ppmc);
 
     void editPpwh(String id, String ppmc);
 
     void editPpwhZt(List<String> idList);
+
+    QysswjXxzxTYwPpwh getPpwhById(String id);
 
 //    int addPpwh(String ppmc);
 }

@@ -1,10 +1,8 @@
 package com.hcgl.hcglproviderhcwh.controller;
 
-import com.hcgl.hcglproviderhcwh.config.MyConfig;
 import com.hcgl.hcglproviderhcwh.entity.QysswjXxzxTYwLxwh;
 import com.hcgl.hcglproviderhcwh.service.QysswjXxzxTYwLxwhService;
 import io.swagger.annotations.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.bind.annotation.*;
@@ -34,16 +32,13 @@ public class QysswjXxzxTYwLxwhController {
 
     private List<QysswjXxzxTYwLxwh> lxwhList;
 
-    @Autowired
-    private MyConfig myConfig;
+
 
     @Value ("${pageSize}")
     private int pageSize;
 
 
-
-
-    @ApiOperation (value = "获取所有在用类型，并且分页", notes = "1.返回List。2.页码大于0,分页")
+    @ApiOperation (value = "获取所有在用类型，并且分页", notes = "1.返回List。2.页码大于0,整数,分页")
     @ApiImplicitParams ({
             @ApiImplicitParam (name = "searchContent", value = "搜索内容", paramType = "query", required = false),
             @ApiImplicitParam (name = "pageNum", value = "页码", paramType = "query", required = true)
@@ -62,17 +57,23 @@ public class QysswjXxzxTYwLxwhController {
         return lxwhList;
     }
 
-//    @ApiOperation (value = "根据id获取", notes = "1.返回List。2.页码大于0,分页")
-//    @ApiImplicitParams ({
-//            @ApiImplicitParam (name = "searchContent", value = "搜索内容", paramType = "query", required = false),
-//            @ApiImplicitParam (name = "pageNum", value = "页码", paramType = "query", required = true)
-//    })
-//    @ApiResponse (code = 400, message = "参数没有填好", response = String.class)
-//    @RequestMapping (value = "/getLxwhList", method = RequestMethod.POST)
-//    @ResponseBody
-//public QysswjXxzxTYwLxwh getLxwhById(){
-//
-//}
+    @ApiOperation (value = "根据id获取类型", notes = "返回QysswjXxzxTYwLxwh对象")
+    @ApiImplicitParams ({
+            @ApiImplicitParam (name = "id", value = "id", paramType = "query", required = true)
+    })
+    @ApiResponse (code = 400, message = "参数没有填好", response = String.class)
+    @RequestMapping (value = "/getLxwhById", method = RequestMethod.POST)
+    @ResponseBody
+    public QysswjXxzxTYwLxwh getLxwhById(@RequestParam (required = true) String id) {
+        QysswjXxzxTYwLxwh ywLxwh = new QysswjXxzxTYwLxwh();
+        try {
+            ywLxwh = qysswjXxzxTYwLxwhService.getLxwhById(id);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ywLxwh;
+    }
 
 
     @ApiOperation (value = "新增保存", notes = "返回字符串，成功返回success，失败返回error")

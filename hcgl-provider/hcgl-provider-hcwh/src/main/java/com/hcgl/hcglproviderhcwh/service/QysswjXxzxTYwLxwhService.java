@@ -19,4 +19,6 @@ public interface QysswjXxzxTYwLxwhService {
     void editLxwh(String id, String lxmc);
 
     void editLxwhZt(List<String> idList);
+
+    QysswjXxzxTYwLxwh getLxwhById(String id);
 }

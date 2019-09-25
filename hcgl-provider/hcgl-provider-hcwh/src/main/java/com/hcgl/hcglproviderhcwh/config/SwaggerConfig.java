@@ -32,7 +32,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("耗材管理系统")
-                .description("耗材维护模块-类型维护接口文档说明")
+                .description("耗材维护模块 接口文档说明")
                 .termsOfServiceUrl("http://localhost:5000")
                 .contact(new Contact("古天乐", "", "284696920@qq.com"))
                 .version("2.0")

@@ -14,7 +14,7 @@ import java.util.List;
 public interface QysswjXxzxTYwPpwhDao {
 
 
-    List<QysswjXxzxTYwPpwh> selectAllPpwh(@Param ("lxmc") String lxmc, @Param ("ppmc") String ppmc,
+    List<QysswjXxzxTYwPpwh> selectAllPpwh(@Param ("lxid") String lxid, @Param ("ppmc") String ppmc,
                                           @Param ("pageNum") int pageNum, @Param ("pageSize") int pageSize);
 
     void insertPpwh(@Param ("lxid") String lxid, @Param ("lxmc") String lxmc, @Param ("ppmc") String ppmc);
@@ -22,6 +22,8 @@ public interface QysswjXxzxTYwPpwhDao {
     void updatePpwh(@Param ("id") String id, @Param ("ppmc") String ppmc);
 
     void updatePpwhZt(@Param ("idList") List<String> idList);
+
+    QysswjXxzxTYwPpwh selectOneById(@Param ("id") String id);
 
 //    int insertPpwh(@Param ("ppmc") String ppmc);
 }

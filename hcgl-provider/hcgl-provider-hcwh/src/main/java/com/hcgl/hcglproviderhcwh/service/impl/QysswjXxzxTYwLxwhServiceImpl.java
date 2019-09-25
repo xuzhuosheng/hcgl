@@ -43,5 +43,12 @@ public class QysswjXxzxTYwLxwhServiceImpl implements QysswjXxzxTYwLxwhService {
         qysswjXxzxTYwLxwhDao.updateLxwhZt(idList);
     }
 
+    @Override
+    public QysswjXxzxTYwLxwh getLxwhById(String id) {
+        QysswjXxzxTYwLxwh ywLxwh = new QysswjXxzxTYwLxwh();
+        ywLxwh = qysswjXxzxTYwLxwhDao.selectOneById(id);
+        return ywLxwh;
+    }
+
 
 }
