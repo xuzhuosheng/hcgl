@@ -17,11 +17,13 @@ public interface QysswjXxzxTYwPpwhService {
 
     void addPpwh(String lxid, String lxmc, String ppmc);
 
-    void editPpwh(String id, String ppmc);
+    void editPpwh(String id, String ppmc, String lxid, String lxmc);
 
     void editPpwhZt(List<String> idList);
 
     QysswjXxzxTYwPpwh getPpwhById(String id);
+
+    List<QysswjXxzxTYwPpwh> getPpwhListByLxid(String lxid);
 
 //    int addPpwh(String ppmc);
 }

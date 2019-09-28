@@ -18,7 +18,7 @@ import java.util.List;
  * @author makejava
  * @since 2019-09-21 10:01:41
  */
-@Api (value = "耗材维护-类型维护", description = "品牌维护类")
+@Api (value = "耗材管理", description = "品牌维护类")
 @RestController
 @RequestMapping ("/Ppwh")
 @PropertySource ("classpath:application.yml")
@@ -102,18 +102,21 @@ public class QysswjXxzxTYwPpwhController {
 
     @ApiOperation (value = "修改后保存", notes = "返回字符串，成功返回success，失败返回error")
     @ApiImplicitParams ({
-            @ApiImplicitParam (name = "id", value = "类型名称", paramType = "query", required = true),
-            @ApiImplicitParam (name = "ppmc", value = "品牌名称", paramType = "query", required = true)
+            @ApiImplicitParam (name = "id", value = "主键id", paramType = "query", required = true),
+            @ApiImplicitParam (name = "ppmc", value = "品牌名称", paramType = "query", required = true),
+            @ApiImplicitParam (name = "lxid", value = "类型id", paramType = "query", required = true),
+            @ApiImplicitParam (name = "lxmc", value = "类型名称", paramType = "query", required = true)
     })
     @ApiResponse (code = 400, message = "参数没有填好", response = String.class)
     @RequestMapping (value = "/editPpwh", method = RequestMethod.POST)
     @ResponseBody
-    public String editPpwh(@RequestParam (required = true) String id, @RequestParam (required = true) String ppmc) {
+    public String editPpwh(@RequestParam (required = true) String id, @RequestParam (required = true) String ppmc,
+                           @RequestParam (required = true) String lxid, @RequestParam (required = true) String lxmc) {
 
         String resultStr = "success";
 
         try {
-            qysswjXxzxTYwPpwhService.editPpwh(id, ppmc);
+            qysswjXxzxTYwPpwhService.editPpwh(id, ppmc, lxid, lxmc);
         } catch (Exception e) {
             resultStr = "error";
             e.printStackTrace();
@@ -145,5 +148,24 @@ public class QysswjXxzxTYwPpwhController {
         }
         return resultStr;
     }
+
+
+    @ApiOperation (value = "根据类型id获取所有在用品牌", notes = "返回List ")
+    @ApiImplicitParams ({
+            @ApiImplicitParam (name = "lxid", value = "类型id", paramType = "query", required = false)
+    })
+    @ApiResponse (code = 400, message = "参数没有填好", response = String.class)
+    @RequestMapping (value = "/getPpwhListByLxid", method = RequestMethod.POST)
+    @ResponseBody
+    public List<QysswjXxzxTYwPpwh> getPpwhListByLxid(@RequestParam (required = false) String lxid) {
+        ppwhList = new ArrayList<>();
+        try {
+            ppwhList = qysswjXxzxTYwPpwhService.getPpwhListByLxid(lxid);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ppwhList;
+    }
+
 
 }

@@ -50,5 +50,11 @@ public class QysswjXxzxTYwLxwhServiceImpl implements QysswjXxzxTYwLxwhService {
         return ywLxwh;
     }
 
+    @Override
+    public List<QysswjXxzxTYwLxwh> getAllLxwhList() {
+        lxwhList = qysswjXxzxTYwLxwhDao.selectAllZyLxwh();
+        return lxwhList;
+    }
+
 
 }

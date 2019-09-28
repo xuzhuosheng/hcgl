@@ -17,4 +17,15 @@ public interface QysswjXxzxTYwXhwhDao {
     List<QysswjXxzxTYwXhwh> selectAllXhwh(@Param ("lxid") String lxid, @Param ("ppid") String ppid,
                                           @Param ("xhmc") String xhmc, @Param ("pageNum") int pageNum,
                                           @Param ("pageSize") int pageSize);
+
+    void insertXhwh(@Param ("ppid") String ppid, @Param ("ppmc") String ppmc, @Param ("xhmc") String xhmc);
+
+    QysswjXxzxTYwXhwh selectOneById(String id);
+
+    void updateXhwh(@Param ("ppid") String ppid, @Param ("ppmc") String ppmc,
+                    @Param ("xhmc") String xhmc, @Param ("id") String id);
+
+    void updateXhwhZt(@Param ("idList") List<String> idList);
+
+    List<QysswjXxzxTYwXhwh> selectXhwhListByPpid(String ppid);
 }

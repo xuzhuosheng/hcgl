@@ -50,6 +50,23 @@
     </select>
 
 
+    <!--根据类型id获取品牌-->
+    <select id="selectAllPpwhByLxid" resultMap="QysswjXxzxTYwPpwhMap">
+        select
+        id, ppmc, lxid, lxmc, createtime, zt, bz
+        from qysw.qysswj_xxzx_t_yw_ppwh
+        <where>
+            1=1
+            and zt='1'
+            <if test="lxid!=null and lxid!='' ">
+                and lxid=#{lxid}
+            </if>
+
+        </where>
+
+    </select>
+
+
     <!--新增所有列-->
     <insert id="insertPpwh" useGeneratedKeys="true">
     insert into qysw.qysswj_xxzx_t_yw_ppwh(ppmc, lxid, lxmc, createtime, zt)
@@ -62,7 +79,13 @@
         update qysw.qysswj_xxzx_t_yw_ppwh
         <set>
             <if test="ppmc!=null and ppmc!=''">
-                ppmc=#{ppmc}
+                ppmc=#{ppmc},
+            </if>
+            <if test="lxid!=null and lxid!='' ">
+                lxid=#{lxid},
+            </if>
+            <if test="lxmc!=null and lxmc!='' ">
+                lxmc=#{lxmc}
             </if>
         </set>
         <where>

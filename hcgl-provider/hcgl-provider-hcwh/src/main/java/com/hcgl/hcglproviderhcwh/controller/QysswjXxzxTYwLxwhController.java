@@ -18,7 +18,7 @@ import java.util.List;
  * @author makejava
  * @since 2019-09-21 09:59:24
  */
-@Api (value = "耗材维护-类型维护", description = "类型维护类")
+@Api (value = "耗材管理", description = "类型维护类")
 @RestController
 @RequestMapping ("/Lxwh")
 @PropertySource ("classpath:application.yml")
@@ -33,12 +33,11 @@ public class QysswjXxzxTYwLxwhController {
     private List<QysswjXxzxTYwLxwh> lxwhList;
 
 
-
     @Value ("${pageSize}")
     private int pageSize;
 
 
-    @ApiOperation (value = "获取所有在用类型，并且分页", notes = "1.返回List。2.页码大于0,整数,分页")
+    @ApiOperation (value = "获取所有在用类型，并且分页.页面显示数据", notes = "1.返回List。2.页码大于0,整数,分页")
     @ApiImplicitParams ({
             @ApiImplicitParam (name = "searchContent", value = "搜索内容", paramType = "query", required = false),
             @ApiImplicitParam (name = "pageNum", value = "页码", paramType = "query", required = true)
@@ -136,6 +135,21 @@ public class QysswjXxzxTYwLxwhController {
             e.printStackTrace();
         }
         return resultStr;
+    }
+
+
+    @ApiOperation (value = "获取所有在用类型 ", notes = "返回List ")
+    @ApiResponse (code = 400, message = "参数没有填好", response = String.class)
+    @RequestMapping (value = "/getAllLxwhList", method = RequestMethod.POST)
+    @ResponseBody
+    public List<QysswjXxzxTYwLxwh> getAllLxwhList() {
+        lxwhList = new ArrayList<>();
+        try {
+            lxwhList = qysswjXxzxTYwLxwhService.getAllLxwhList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return lxwhList;
     }
 
 

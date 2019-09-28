@@ -28,4 +28,11 @@ public interface QysswjXxzxTYwLxwhDao {
     void updateLxwhZt(@Param ("idList") List<String> idList);
 
     QysswjXxzxTYwLxwh selectOneById(@Param ("id") String id);
+
+    /**
+     * 获取所有在用类型
+     *
+     * @return
+     */
+    List<QysswjXxzxTYwLxwh> selectAllZyLxwh();
 }

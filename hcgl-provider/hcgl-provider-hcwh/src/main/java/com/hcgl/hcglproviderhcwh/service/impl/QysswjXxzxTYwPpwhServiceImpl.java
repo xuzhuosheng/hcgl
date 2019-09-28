@@ -33,8 +33,8 @@ public class QysswjXxzxTYwPpwhServiceImpl implements QysswjXxzxTYwPpwhService {
     }
 
     @Override
-    public void editPpwh(String id, String ppmc) {
-        qysswjXxzxTYwPpwhDao.updatePpwh(id, ppmc);
+    public void editPpwh(String id, String ppmc, String lxid, String lxmc) {
+        qysswjXxzxTYwPpwhDao.updatePpwh(id, ppmc, lxid, lxmc);
     }
 
     @Override
@@ -47,6 +47,12 @@ public class QysswjXxzxTYwPpwhServiceImpl implements QysswjXxzxTYwPpwhService {
         QysswjXxzxTYwPpwh qysswjXxzxTYwPpwh = new QysswjXxzxTYwPpwh();
         qysswjXxzxTYwPpwh = qysswjXxzxTYwPpwhDao.selectOneById(id);
         return qysswjXxzxTYwPpwh;
+    }
+
+    @Override
+    public List<QysswjXxzxTYwPpwh> getPpwhListByLxid(String lxid) {
+        ppwhList = qysswjXxzxTYwPpwhDao.selectAllPpwhByLxid(lxid);
+        return ppwhList;
     }
 
 //    @Override

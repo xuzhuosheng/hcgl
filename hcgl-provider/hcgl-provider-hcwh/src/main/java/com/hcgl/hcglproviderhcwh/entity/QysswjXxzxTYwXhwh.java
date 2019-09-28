@@ -14,9 +14,9 @@ public class QysswjXxzxTYwXhwh implements Serializable {
     private Integer id;
     //型号
     private String xhmc;
-    
+
     private String ppid;
-    
+
     private String ppmc;
     //创建时间
     private Object createtime;
@@ -24,6 +24,27 @@ public class QysswjXxzxTYwXhwh implements Serializable {
     private String zt;
     //备注
     private String bz;
+
+    //    ################
+    private String lxid;
+    private String lxmc;
+
+    public String getLxid() {
+        return lxid;
+    }
+
+    public void setLxid(String lxid) {
+        this.lxid = lxid;
+    }
+
+    public String getLxmc() {
+        return lxmc;
+    }
+
+    public void setLxmc(String lxmc) {
+        this.lxmc = lxmc;
+    }
+    //    ################
 
 
     public Integer getId() {

@@ -24,5 +24,10 @@ zuul:
     socket-timeout-millis: 60000
 
 
+
+
+
+###########业务参数配置###############
+
 pageSize: 10
 

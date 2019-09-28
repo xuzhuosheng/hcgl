@@ -29,4 +29,33 @@ public class QysswjXxzxTYwXhwhServiceImpl implements QysswjXxzxTYwXhwhService {
         xhwhList = qysswjXxzxTYwXhwhDao.selectAllXhwh(lxid, ppid, xhmc, pageNum, pageSize);
         return xhwhList;
     }
+
+    @Override
+    public void addXhwh(String ppid, String ppmc, String xhmc) {
+        qysswjXxzxTYwXhwhDao.insertXhwh(ppid, ppmc, xhmc);
+    }
+
+    @Override
+    public QysswjXxzxTYwXhwh getXhwhById(String id) {
+        QysswjXxzxTYwXhwh qysswjXxzxTYwXhwh = new QysswjXxzxTYwXhwh();
+        qysswjXxzxTYwXhwh = qysswjXxzxTYwXhwhDao.selectOneById(id);
+        return qysswjXxzxTYwXhwh;
+    }
+
+    @Override
+    public void editXhwhZt(List<String> idList) {
+        qysswjXxzxTYwXhwhDao.updateXhwhZt(idList);
+    }
+
+    @Override
+    public void editXhwh(String ppid, String ppmc, String xhmc, String id) {
+        qysswjXxzxTYwXhwhDao.updateXhwh(ppid, ppmc, xhmc, id);
+    }
+
+    @Override
+    public List<QysswjXxzxTYwXhwh> getXhwhListByPpid(String ppid) {
+        xhwhList = new ArrayList<>();
+        xhwhList = qysswjXxzxTYwXhwhDao.selectXhwhListByPpid(ppid);
+        return xhwhList;
+    }
 }

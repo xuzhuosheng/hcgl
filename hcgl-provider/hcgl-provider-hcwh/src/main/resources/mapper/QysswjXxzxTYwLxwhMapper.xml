@@ -79,6 +79,18 @@
         </where>
     </update>
 
+
+    <!--查询所有状态为正常在用（zt=1）的记录-->
+    <select id="selectAllZyLxwh" resultMap="QysswjXxzxTYwLxwhMap">
+        select
+        id, lxmc, createtime, zt, bz
+        from qysw.qysswj_xxzx_t_yw_lxwh
+        <where>
+            zt = '1'
+        </where>
+        order by createtime desc
+
+    </select>
     <!--&lt;!&ndash;查询指定行数据&ndash;&gt;-->
     <!--<select id="queryAllByLimit" resultMap="QysswjXxzxTYwLxwhMap">-->
     <!--select-->

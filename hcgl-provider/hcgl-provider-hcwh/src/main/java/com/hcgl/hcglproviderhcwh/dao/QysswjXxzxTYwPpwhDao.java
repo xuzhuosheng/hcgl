@@ -19,11 +19,14 @@ public interface QysswjXxzxTYwPpwhDao {
 
     void insertPpwh(@Param ("lxid") String lxid, @Param ("lxmc") String lxmc, @Param ("ppmc") String ppmc);
 
-    void updatePpwh(@Param ("id") String id, @Param ("ppmc") String ppmc);
+    void updatePpwh(@Param ("id") String id, @Param ("ppmc") String ppmc, @Param ("lxid") String lxid,
+                    @Param ("lxmc") String lxmc);
 
     void updatePpwhZt(@Param ("idList") List<String> idList);
 
     QysswjXxzxTYwPpwh selectOneById(@Param ("id") String id);
+
+    List<QysswjXxzxTYwPpwh> selectAllPpwhByLxid(@Param ("lxid") String lxid);
 
 //    int insertPpwh(@Param ("ppmc") String ppmc);
 }
