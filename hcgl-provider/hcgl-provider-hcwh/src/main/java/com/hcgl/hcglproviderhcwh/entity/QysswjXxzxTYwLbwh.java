@@ -6,21 +6,21 @@ import java.io.Serializable;
  * (QysswjXxzxTYwLbwh)实体类
  *
  * @author makejava
- * @since 2019-09-25 09:33:43
+ * @since 2019-10-09 16:15:50
  */
 public class QysswjXxzxTYwLbwh implements Serializable {
-    private static final long serialVersionUID = 204880355089280952L;
+    private static final long serialVersionUID = 928059917111626878L;
     //主键id
     private Integer id;
     //类别名称
     private String lbmc;
     //预算单价
     private String ysdj;
-    
+
     private Integer kcl;
-    
+
     private String xhid;
-    
+
     private String xhmc;
     //创建时间
     private Object createtime;
@@ -29,6 +29,44 @@ public class QysswjXxzxTYwLbwh implements Serializable {
     //备注
     private String bz;
 
+    /*显示需要*/
+
+    private String lxid; //类型id
+    private String lxmc; //类型名称
+    private String ppid; //品牌id
+    private String ppmc; //品牌名称
+
+    public String getLxid() {
+        return lxid;
+    }
+
+    public void setLxid(String lxid) {
+        this.lxid = lxid;
+    }
+
+    public String getLxmc() {
+        return lxmc;
+    }
+
+    public void setLxmc(String lxmc) {
+        this.lxmc = lxmc;
+    }
+
+    public String getPpid() {
+        return ppid;
+    }
+
+    public void setPpid(String ppid) {
+        this.ppid = ppid;
+    }
+
+    public String getPpmc() {
+        return ppmc;
+    }
+
+    public void setPpmc(String ppmc) {
+        this.ppmc = ppmc;
+    }
 
     public Integer getId() {
         return id;

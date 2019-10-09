@@ -22,6 +22,7 @@ import java.util.List;
 @Api (value = "耗材管理", description = "类别维护类")
 @PropertySource ("classpath:application.yml")
 @RequestMapping ("/Lbwh")
+@RestController
 public class QysswjXxzxTYwLbwhController extends BaseController {
     /**
      * 服务对象
@@ -34,16 +35,19 @@ public class QysswjXxzxTYwLbwhController extends BaseController {
 
     @ApiOperation (value = "获取所有在用类别，并且分页.页面显示数据", notes = "1.返回List。2.页码大于0,整数,分页")
     @ApiImplicitParams ({
-            @ApiImplicitParam (name = "searchContent", value = "搜索内容", paramType = "query", required = false),
+            @ApiImplicitParam (name = "lxid", value = "类型id", paramType = "query", required = false),
+            @ApiImplicitParam (name = "ppid", value = "品牌id", paramType = "query", required = false),
+            @ApiImplicitParam (name = "xhid", value = "型号id", paramType = "query", required = false),
+            @ApiImplicitParam (name = "lbmc", value = "类别名称", paramType = "query", required = false),
             @ApiImplicitParam (name = "pageNum", value = "页码", paramType = "query", required = true)
     })
     @ApiResponse (code = 400, message = "参数没有填好", response = String.class)
     @RequestMapping (value = "/getYwLbwhList", method = RequestMethod.POST)
     @ResponseBody
-    public List<QysswjXxzxTYwLbwh> getYwLbwhList(@RequestParam (required = true) String lxid,
-                                                 @RequestParam (required = true) String ppid,
-                                                 @RequestParam (required = true) String xhid,
-                                                 @RequestParam (required = true) String lbmc,
+    public List<QysswjXxzxTYwLbwh> getYwLbwhList(@RequestParam (required = false) String lxid,
+                                                 @RequestParam (required = false) String ppid,
+                                                 @RequestParam (required = false) String xhid,
+                                                 @RequestParam (required = false) String lbmc,
                                                  @RequestParam (required = true) int pageNum) {
         ywLbwhList = new ArrayList<>();
         try {

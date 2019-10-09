@@ -26,8 +26,11 @@ zuul:
 
 
 
-
 ###########业务参数配置###############
 
 pageSize: 10
-
+feign:
+  httpclient:
+    connection-timeout: 300
+  hystrix:
+    enabled: true
