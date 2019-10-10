@@ -61,6 +61,22 @@
         <!--数据库连接-->
 
 
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>com.netflix.ribbon</groupId>-->
+            <!--<artifactId>ribbon-core</artifactId>-->
+            <!--<version>2.2.0</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.netflix.ribbon</groupId>-->
+            <!--<artifactId>ribbon-httpclient</artifactId>-->
+            <!--<version>2.2.0</version>-->
+        <!--</dependency>-->
+
     </dependencies>
 
 

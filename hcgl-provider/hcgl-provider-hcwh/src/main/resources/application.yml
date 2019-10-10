@@ -33,5 +33,4 @@ logging:
     com.hcgl.hcglproviderhcwh.dao: debug
 
 ######################
-lxwh:
-  pageSize: 10
+pageSize: 10
