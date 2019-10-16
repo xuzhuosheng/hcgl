@@ -18,6 +18,7 @@
         <module name="hcgl-provider-xtgn" />
         <module name="hcgl-provider-xtgn-api" />
         <module name="hcgl-zuul" />
+        <module name="jwt-authorization" />
       </profile>
     </annotationProcessing>
   </component>

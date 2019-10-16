@@ -16,5 +16,6 @@
     <file url="file://$PROJECT_DIR$/hcgl-provider/hcgl-provider-sqjl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hcgl-provider/hcgl-provider-xtgn" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hcgl-zuul" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jwt-authorization" charset="UTF-8" />
   </component>
 </project>

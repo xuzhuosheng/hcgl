@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * (QysswjXxzxTXtUser)表控制层
@@ -56,6 +58,8 @@ public class QysswjXxzxTXtUserController {
     public String doLogin(@RequestParam (required = true) String username,
                           @RequestParam (required = true) String password) {
         String resultStr = "";
+        System.out.println(username + "222");
+
         qysswjXxzxTXtUser = new QysswjXxzxTXtUser();
         qysswjXxzxTXtUser = qysswjXxzxTXtUserService.getUserByUserName(username, password);
         if (qysswjXxzxTXtUser != null) {
@@ -64,5 +68,18 @@ public class QysswjXxzxTXtUserController {
         return resultStr;
     }
 
+
+    @RequestMapping (value = "/Test", method = RequestMethod.POST)
+    @ResponseBody
+    public List<String> Test(@RequestParam (required = false) String name,
+                             @RequestParam (required = false) int age) {
+
+        System.out.println(name + "----" + age);
+        List<String> strList = new ArrayList<>();
+        strList.add(name);
+        strList.add(String.valueOf(age));
+        return strList;
+
+    }
 
 }

@@ -20,6 +20,7 @@
         <module>hcgl-zuul</module>
         <module>hcgl-provider</module>
         <module>hcgl-provider-api</module>
+        <module>jwt-authorization</module>
     </modules>
 
 
